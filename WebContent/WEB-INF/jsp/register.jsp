@@ -111,7 +111,7 @@ width:80px;
 		 <b>Add New Equipment </b> </div>
 		<br />
 		<center>
-			<form:form method="post" action="/spring1/insert"  modelAttribute="user">
+			<form:form method="post" action="/SmartTrack/insert"  modelAttribute="user">
 
 				<table>
 							<tr>

@@ -26,7 +26,7 @@ td {
 	text-align:left;
 }
  select {
-        width:200px;
+        width:145px;
     }
   
     

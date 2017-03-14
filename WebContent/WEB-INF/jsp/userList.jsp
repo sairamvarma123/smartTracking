@@ -3,6 +3,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+ <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script> 
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.13/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
 <html>
 <head>
 <title>Equipment Registration</title>
@@ -44,6 +55,29 @@ div.tl {
 }
 
 </style>
+<script>
+$(document).ready(function () {
+	$('#example').dataTable({
+		
+		'aoColumns': [
+            {},
+            {},
+            {},
+            {},
+            {},
+           
+      ]
+  
+});
+})
+
+/* var filteredData = table
+    .column( 0 )
+    .data()
+    .filter( function ( value, index ) {
+        return value > 20 ? true : false;
+    } ); */
+</script>
 </head>
 <body>
 <div class="ex">
@@ -52,16 +86,18 @@ div.tl {
 			</div><br>
 			<div>
 			<center>
-			
-		<table border="1">
+			<div class = "table-responsive">
+				<table id="example" class="table datatable display table-responsive"  border="1" width="70%" cellspacing="0">
+		<thead>
 			<tr>
-				<td class="heading">S_NO</td>
-				<td class="heading">Equipment_Name</td>
-				<td class="heading">Description </td>
-				<td class="heading">Reg_No</td>
-				<td class="heading">Generate</td>
+				<th class="heading">S_NO</th>
+				<th class="heading">Equipment_Name</th>
+				<th class="heading">Description </th>
+				<th class="heading">Reg_No</th>
+				<th class="heading">Generate</th>
 			</tr>
-			 
+			 </thead>
+			 <tbody>
 			<c:forEach var="user" items="${userList}">
 			
 				<tr>
@@ -70,8 +106,12 @@ div.tl {
 					<td>${user.description}</td>
 					<td>${user.reg_No}</td>
 					<td> <INPUT TYPE="BUTTON" VALUE="Qrcode"  ></td>
-					</tr></c:forEach></table>
-		<a href="register">Click Here Add New
+					</tr>
+					</c:forEach>
+					</tbody></table>
+					</div>
+					<br/>
+							            <a href="register">Click Here Add New
 								Equpiment </a>
 	
 </div>

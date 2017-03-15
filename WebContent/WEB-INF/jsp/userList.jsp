@@ -53,7 +53,12 @@ div.tl {
 	background-color: teal;
     color:white;
 }
-
+.table-responsive {  
+ width: 44%;  
+ padding: 13px;  
+  height:auto;  
+ line-height: 4px;  
+}  
 </style>
 <script>
 $(document).ready(function () {
@@ -87,6 +92,7 @@ $(document).ready(function () {
 			<div>
 			<center>
 			<div class = "table-responsive">
+			
 				<table id="example" class="table datatable display table-responsive"  border="1" width="70%" cellspacing="0">
 		<thead>
 			<tr>
@@ -108,14 +114,16 @@ $(document).ready(function () {
 					<td> <INPUT TYPE="BUTTON" VALUE="Qrcode"  ></td>
 					</tr>
 					</c:forEach>
-					</tbody></table>
+					</tbody>
+					</table>
+					
 					</div>
 					<br/>
 							            <a href="register">Click Here Add New
 								Equpiment </a>
-	
-</div>
 	</center>
+</div>
+	
 	</div>
 </body>
 </html>

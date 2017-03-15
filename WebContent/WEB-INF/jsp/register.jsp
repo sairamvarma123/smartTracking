@@ -8,6 +8,15 @@
   <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
  
   <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script> function validateForm() 
+       { 
+	  if(document.frm.username.value=="") 
+	  { alert("User Name should not be blank.."); 
+	  document.frm.username.focus(); return false; 
+	  } 
+	  } 
+  </script>
+
 <style>
 body {
 	font-size: 20px;
@@ -21,12 +30,12 @@ td {
 	
 	font-style:bold;
 	color: black;
-	width: 100px;
+	width: 110px;
 	height: 22px;
 	text-align:left;
 }
  select {
-        width:145px;
+        width:174px;
     }
   
     
@@ -111,17 +120,17 @@ width:80px;
 		 <b>Add New Equipment </b> </div>
 		<br />
 		<center>
-			<form:form method="post" action="/SmartTrack/insert"  modelAttribute="user">
+			<form:form method="post" action="/SmartTrack/insert"  modelAttribute="user" name="frm">
 
 				<table>
 							<tr>
 						<td>Equipment Id:</td>
-						<td><form:input path="Equipment_Id" length="2"/></td>
+						<td><form:input path="Equipment_Id" length="2" /></td>
 					</tr>
 					<tr>
 	
 						<td>Equipment Name:</td>
-						<td><form:input path="Equipment_Name"  /></td>
+						<td><form:input path="Equipment_Name" name="username" /></td>
 					</tr>
 					<tr>
 						<td>Equipment Type:</td>
@@ -154,14 +163,14 @@ width:80px;
 					</tr>
 					<tr>
 					<td></td>
-									<td><input type="submit" value="Save" class="btncolour"/></td>
+				<td><input type="submit" value="Save" class="btncolour" name="submit"/></td>
 					</tr>
 			
 					<tr>
 					<td></td>
 					
-						<td colspan="2"><a href="getList">Click Here to See
-								Equpiment List</a></td>
+						<td colspan="2"><a href="getList">Click to See List of Equipment</a></td>
+								
 					</tr>
 
 				</table>

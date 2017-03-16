@@ -26,7 +26,7 @@ body {
 div.ex {
 	text-align: right width:100px;
 	padding: 0px;
-	border: 2px solid silver;
+	border: 0px solid silver;
 	top-margin: 50px
 }
 td {
@@ -38,7 +38,7 @@ td {
 	padding:10px;
 }
 .heading {
-	font-size: 18px;
+	font-size: 15px;
 	color: white;
 	font: bold;
 	background-color: teal;
@@ -48,31 +48,39 @@ div.tl {
 
 	text-align:left ;
 	padding: 10px;
-	border: 2px solid silver;
+	border: 20px white;
 	margin: 0px;
 	background-color: teal;
     color:white;
 }
-.table-responsive {  
- width: 44%;  
- padding: 12px;  
-  height:100%;  
- line-height: 2px; 
- float:center;
- }  
+.table-responsive { 
+
+ width: 53%; 
+
+ padding: 0px; 
+
+  height:auto; 
+
+ line-height: 6px; 
+
+}
+
 </style>
+
 <script>
 $(document).ready(function () {
+	
 	$('#example').dataTable({
-        "aaSorting": [[ 0, "asc" ]],
-        "iDisplayLength": 10,
-        "bInfo" : false,
-        "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+		"bInfo" : false,
+		"iDisplayLength": 5,
+		"aLengthMenu": [[5,10, 25, 50, 100], [5,10, 25, 50, 100]],
+		
+		
 		'aoColumns': [
             {},
             {},
             {},
-            {},
+            { },
             {},
            
       ]
@@ -95,9 +103,8 @@ $(document).ready(function () {
 			</div><br>
 			<div>
 			<center>
-			<div class = "table-responsive">
-			
-				<table id="example" class="table datatable display table-responsive"  border="1" width="70%" cellspacing="0">
+			<div class = "table-responsive table-bordered" style="background-color:#FFF0F5">
+				<table id="example" class="table datatable display table-bordered table-stripped table-responsive"  border="1" width="85%" cellspacing="0">
 		<thead>
 			<tr>
 				<th class="heading">S_NO</th>
@@ -118,16 +125,14 @@ $(document).ready(function () {
 					<td> <INPUT TYPE="BUTTON" VALUE="Qrcode"  ></td>
 					</tr>
 					</c:forEach>
-					</tbody>
-					</table>
-					
+					</tbody></table>
 					</div>
 					<br/>
 							            <a href="register">Click Here Add New
 								Equpiment </a>
-	</center>
-</div>
 	
+</div>
+	</center>
 	</div>
 </body>
 </html>

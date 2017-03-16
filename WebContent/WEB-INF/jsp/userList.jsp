@@ -55,15 +55,19 @@ div.tl {
 }
 .table-responsive {  
  width: 44%;  
- padding: 13px;  
-  height:auto;  
- line-height: 4px;  
-}  
+ padding: 12px;  
+  height:100%;  
+ line-height: 2px; 
+ float:center;
+ }  
 </style>
 <script>
 $(document).ready(function () {
 	$('#example').dataTable({
-		
+        "aaSorting": [[ 0, "asc" ]],
+        "iDisplayLength": 10,
+        "bInfo" : false,
+        "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
 		'aoColumns': [
             {},
             {},

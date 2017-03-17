@@ -53,18 +53,18 @@ div.tl {
 	background-color: teal;
     color:white;
 }
-.table-responsive { 
+
+.obj { 
 
  width: 53%; 
 
- padding: 0px; 
+ /*padding: 0px; 
 
   height:auto; 
 
- line-height: 6px; 
+ line-height: 6px; */
 
 }
-
 </style>
 
 <script>
@@ -103,8 +103,8 @@ $(document).ready(function () {
 			</div><br>
 			<div>
 			<center>
-			<div class = "table-responsive table-bordered" style="background-color:#FFF0F5">
-				<table id="example" class="table datatable display table-bordered table-stripped table-responsive"  border="1" width="85%" cellspacing="0">
+			<div class = "table-responsive table-bordered obj" style="background-color:#FFF0F5">
+				<table id="example" class="table datatable display table-bordered table-stripped table-responsive"  border="1" width="50" cellspacing="0">
 		<thead>
 			<tr>
 				<th class="heading">S_NO</th>
@@ -118,7 +118,7 @@ $(document).ready(function () {
 			<c:forEach var="user" items="${userList}">
 			
 				<tr>
-					<td>${user.s_NO}</td>
+					<td>${user.s_NO}</td>	
 				    <td>${user.equipment_Name}</td>
 					<td>${user.description}</td>
 					<td>${user.reg_No}</td>

@@ -35,7 +35,7 @@ td {
 	text-align:left;
 }
  select {
-        width:174px;
+        width:243px;
     }
   
     
@@ -57,7 +57,7 @@ div.ex {
 div.tl {
 background-color: teal;
 color:white;
-	text-align: left ;
+	text-align: center ;
 	padding: 10px;
 	border: 2px solid silver;http://localhost:3333/SpringJDBCTemplate/getList
 	margin: 0px
@@ -120,7 +120,7 @@ width:80px;
 		 <b>Add New Equipment </b> </div>
 		<br />
 		<center>
-			<form:form method="post" action="/SmartTrack/insert"  modelAttribute="user" name="frm">
+			<form:form method="post" class = "table-responsive" action="/SmartTrack/insert"  modelAttribute="user" name="frm">
 
 				<table>
 							<tr>

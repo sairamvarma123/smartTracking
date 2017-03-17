@@ -12,7 +12,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.13/css/jquery.dataTables.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <html>
 <head>
@@ -95,6 +96,14 @@ $(document).ready(function () {
         return value > 20 ? true : false;
     } ); */
 </script>
+ <script>
+  function newQR(user) {
+   alert(user);
+    
+    document.getElementById('qrcode').src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + user
+  }
+ 
+</script>
 </head>
 <body>
 <div class="ex">
@@ -122,17 +131,35 @@ $(document).ready(function () {
 				    <td>${user.equipment_Name}</td>
 					<td>${user.description}</td>
 					<td>${user.reg_No}</td>
-					<td> <INPUT TYPE="BUTTON" VALUE="Qrcode"  ></td>
-					</tr>
-					</c:forEach>
-					</tbody></table>
-					</div>
-					<br/>
-							            <a href="register">Click Here Add New
-								Equpiment </a>
-	
+					<td> <button onclick="newQR('${user.equipment_Name}')" class="btn btn-success" data-toggle="modal" data-target="#myModal">QRcode</button>
+     </td>
+     </tr>
+     </c:forEach>
+     </tbody></table>
+     </div>
+     <br/>
+     <!--<td>  <INPUT TYPE="BUTTON" VALUE="Qrcode"  ></td> -->
+             <a href="register">Click Here Add New Equipment </a>
+ </center>
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">QR Code</h4>
+      </div>
+      <div class="modal-body">
+       <img id='qrcode' src='' class="center-block">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+      
+    </div>
+  </div>
 </div>
-	</center>
-	</div>
+</div>
+</div>
 </body>
 </html>

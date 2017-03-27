@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -20,38 +20,38 @@
 <title>Equipment Registration</title>
 <style>
 body {
-	font-size: 20px;
-	color: teal;
-	font-family: Calibri;
+ font-size: 20px;
+ color:DarkSlateBlue  ;
+ font-family: Calibri;
 }
 div.ex {
-	text-align: right width:100px;
-	padding: 0px;
-	border: 0px solid silver;
-	top-margin: 50px
+ text-align: center;
+ padding: 0px;
+ border: 0px solid silver;
+ top-margin: 50px
 }
 td {
-	font-size: 15px;
-	color: black;
-	width: 100px;
-	height: 22px;
-	text-align:center;
-	padding:10px;
+ font-size: 15px;
+ color: black;
+ width: 100px;
+ height: 22px;
+ text-align:center;
+ padding:10px;
 }
 .heading {
-	font-size: 15px;
-	color: white;
-	font: bold;
-	background-color: teal;
-	border: thick;
+ font-size: 15px;
+ color: white;
+ font: bold;
+ background-color: LightCoral ;
+ border: thick;
 }
 div.tl {
 
-	text-align:left ;
-	padding: 10px;
-	border: 20px white;
-	margin: 0px;
-	background-color: teal;
+    text-align: center ; 
+ padding: 1px;
+ border: 20px white;
+ margin: 0px;
+ background-color: BlanchedAlmond ;
     color:white;
 }
 
@@ -66,18 +66,25 @@ div.tl {
  line-height: 6px; */
 
 }
+.btncolour{
+color: white;
+background-color: teal;
+border-color: #4cae4c;
+align:center;
+width:80px;
+}
 </style>
 
 <script>
 $(document).ready(function () {
-	
-	$('#example').dataTable({
-		"bInfo" : false,
-		"iDisplayLength": 5,
-		"aLengthMenu": [[5,10, 25, 50, 100], [5,10, 25, 50, 100]],
-		
-		
-		'aoColumns': [
+ 
+ $('#example').dataTable({
+  "bInfo" : false,
+  "iDisplayLength": 5,
+  "aLengthMenu": [[5,10, 25, 50, 100], [5,10, 25, 50, 100]],
+  
+  
+  'aoColumns': [
             {},
             {},
             {},
@@ -108,39 +115,59 @@ $(document).ready(function () {
 <body>
 <div class="ex">
 <div class="tl">
-		 <b>Equipment Registration </b>
-			</div><br>
-			<div>
-			<center>
-			<div class = "table-responsive table-bordered obj" style="background-color:#FFF0F5">
-				<table id="example" class="table datatable display table-bordered table-stripped table-responsive"  border="1" width="50" cellspacing="0">
-		<thead>
-			<tr>
-				<th class="heading">S_NO</th>
-				<th class="heading">Equipment_Name</th>
-				<th class="heading">Description </th>
-				<th class="heading">Reg_No</th>
-				<th class="heading">Generate</th>
-			</tr>
-			 </thead>
-			 <tbody>
-			<c:forEach var="user" items="${userList}">
-			
-				<tr>
-					<td>${user.s_NO}</td>	
-				    <td>${user.equipment_Name}</td>
-					<td>${user.description}</td>
-					<td>${user.reg_No}</td>
-					<td> <button onclick="newQR('${user.equipment_Name}')" class="btn btn-success" data-toggle="modal" data-target="#myModal">QRcode</button>
+ <div class="container">
+ 
+ <a href="#" class="navbar-brand"> </a> <button class="navbar-toggle"
+      data-toggle="collapse" data-target=".navHeaderCollapse"></button>
+
+      <div class="collapse navbar-collapse navHeaderCollapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">Admin</a></li>
+
+          <li><a href="#">Master</a>
+          </li>
+ <li class=""><a href="Login">Logout</a></li>
+           </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+    
+  
+  <b>EQUIPMENT REGISTRATION </b> 
+   </div><br>
+   <div>
+   <div class="container" align="right" > 
+     <a href="register">Add</a></div>
+   <center>
+   
+   <div class = "table-responsive table-bordered obj" style="background-color:#FFF0F5">
+    <table id="example" class="table datatable display table-bordered table-stripped table-responsive"  border="1" width="50" cellspacing="0">
+  <thead>
+   <tr>
+    <th class="heading">S_NO</th>
+    <th class="heading">Equipment_Name</th>
+    <th class="heading">Description </th>
+    <th class="heading">Reg_No</th>
+    <th class="heading">Generate</th>
+   </tr>
+    </thead>
+    <tbody>
+   <c:forEach var="user" items="${userList}">
+   
+    <tr>
+     <td>${user.s_NO}</td> 
+        <td>${user.equipment_Name}</td>
+     <td>${user.description}</td>
+     <td>${user.reg_No}</td>
+     <td> <button onclick="newQR('${user.equipment_Name}')" class="btn btn-success" data-toggle="modal" data-target="#myModal">QRcode</button>
      </td>
      </tr>
      </c:forEach>
      </tbody></table>
      </div>
      <br/>
-     <!--<td>  <INPUT TYPE="BUTTON" VALUE="Qrcode"  ></td> -->
-             <a href="register">Click Here Add New Equipment </a>
- </center>
+      </center>
  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

@@ -25,13 +25,19 @@
 	<bean id="userService" class="com.dhanush.services.UserServiceImpl" />
 
 	<!-- declare datasource bean -->
+	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/smarttrack" />
+		
 <!-- 		<property name="url" value="jdbc:mysql://10.10.11.104:3306/assignment" /> -->
 <!-- <property name="url" value="jdbc:mysql://10.10.11.48:3306/smarttrack" /> -->
 		<property name="username" value="root" />
 		<property name="password" value="1234" />
 	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">  
+<property name="dataSource" ref="dataSource"></property>  
+</bean>
+	
 </beans>
